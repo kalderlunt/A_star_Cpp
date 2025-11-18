@@ -87,6 +87,8 @@ void AStar (std::vector<Node*>& graph, int sizeX, int sizeY, Node* startNode, No
         }
         AddUnique(closedList, lessCostNode);
 
+        std::cout << "Target found ? " << (targetIsFound) << "\n";
+
 
         // Faire le chemin retour pour trouver la route la plus rapide.
 
