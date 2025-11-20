@@ -1,1 +1,1 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/A_star_Cpp.dir/link.d CMakeFiles/A_star_Cpp.dir/main.cpp.o CMakeFiles/A_star_Cpp.dir/A_Star/AStar.cpp.o CMakeFiles/A_star_Cpp.dir/TimeSystem/TimeSystem.cpp.o -o A_star_Cpp
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/A_star_Cpp.dir/link.d CMakeFiles/A_star_Cpp.dir/main.cpp.o CMakeFiles/A_star_Cpp.dir/A_Star/AStar.cpp.o CMakeFiles/A_star_Cpp.dir/TimeSystem/TimeSystem.cpp.o -o A_star_Cpp
