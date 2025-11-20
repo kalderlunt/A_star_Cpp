@@ -45,11 +45,11 @@ int main() {
 
     // ********* Astar Calcul avec Visualisation *********
 
-    int startNodeX = 9;
-    int startNodeY = 7;
+    int startNodeX = 0;
+    int startNodeY = 0;
 
-    int targetNodeX = 11;
-    int targetNodeY = 7;
+    int targetNodeX = 29;
+    int targetNodeY = 14;
 
     int startNodeIndex = startNodeX + startNodeY * sizeX;
     int targetNodeIndex = targetNodeX + targetNodeY * sizeX;
