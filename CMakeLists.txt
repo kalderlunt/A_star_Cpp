@@ -6,4 +6,5 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(A_star_Cpp main.cpp
         "A Star/AStar.cpp"
         "A Star/AStar.h"
-        TimeSystem/TimeSystem.h)
+        TimeSystem/TimeSystem.h
+        TimeSystem/TimeSystem.cpp)

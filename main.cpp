@@ -2,6 +2,7 @@
 #include <vector>
 #include <cfloat>
 #include "A Star/AStar.h"
+#include "TimeSystem/TimeSystem.h"
 
 void InitGraph(std::vector<Node*>& graph, const int sizeX, const int sizeY) {
     graph.clear();
@@ -16,6 +17,11 @@ void InitGraph(std::vector<Node*>& graph, const int sizeX, const int sizeY) {
             graph.push_back(node);
         }
     }
+}
+
+// Fonction de callback pour être appelée de manière temporisée
+void TimedAStarCallback(std::vector<int>& dummy, int iteration, int maxIterations) {
+    std::cout << "\n[Timed Callback] Iteration " << iteration << "/" << maxIterations << " executee!\n";
 }
 
 int main() {
@@ -37,22 +43,18 @@ int main() {
         graph[x + 7 * sizeX]->isObstacle = true;
     }
 
-    // ********* Astar Calcul *********
+    // ********* Astar Calcul avec Visualisation *********
 
     int startNodeX = 9;
     int startNodeY = 7;
 
-    int targetNodeX = 11; // 29
-    int targetNodeY = 7; // 14
+    int targetNodeX = 11;
+    int targetNodeY = 7;
 
     int startNodeIndex = startNodeX + startNodeY * sizeX;
     int targetNodeIndex = targetNodeX + targetNodeY * sizeX;
 
-    AStarResult result = AStar(graph, sizeX, sizeY, graph[startNodeIndex], graph[targetNodeIndex]);
-
-    // Afficher la grille
-    DisplayGrid(graph, sizeX, sizeY, result.closedList, result.path,
-                graph[startNodeIndex], graph[targetNodeIndex]);
+    AStarResult result = AStarWithVisualization(graph, sizeX, sizeY, graph[startNodeIndex], graph[targetNodeIndex], 0.3f);
 
     // nettoyage (pour éviter les fuites mémoire)
     for (Node* n : graph) {
