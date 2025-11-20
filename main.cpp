@@ -54,7 +54,8 @@ int main() {
     int startNodeIndex = startNodeX + startNodeY * sizeX;
     int targetNodeIndex = targetNodeX + targetNodeY * sizeX;
 
-    AStarResult result = AStarWithVisualization(graph, sizeX, sizeY, graph[startNodeIndex], graph[targetNodeIndex], 0.3f);
+    AStarResult result = AStarWithVisualization(graph, sizeX, sizeY,
+        graph[startNodeIndex], graph[targetNodeIndex], 0.3f);
 
     // nettoyage (pour éviter les fuites mémoire)
     for (Node* n : graph) {
